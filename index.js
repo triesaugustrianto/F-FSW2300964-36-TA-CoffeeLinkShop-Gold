@@ -1,30 +1,25 @@
 const express = require('express');
 const app = express();
+const path = require('path')
 const port = 3000;
+app.set('view engine', 'ejs')
 
 const logger = (req, res, next) => {
-    console.log(`aplikasi ${req.method} ${req.url}`)
+    console.log(`aplikasi level : ${req.method} ${req.url}`)
     next()
 }
 app.use(logger)
 
-app.get('/home', (req, res) => {
-    res.sendFile('./index.html', { root : __dirname});
-});
+const router = require('./routers/routerProducts')
+app.use('/products', router)
 
-
-app.get('/product/:id', (req, res) => {
-    res.send(`id produck : ${req.params.id} <br>
-     category product : ${req.query.category}`)
-});
-
-app.get('/users', (req, res) => {
-    res.json({
-        id  : 1,
-        nama : 'tries',
-        umur : 27
-    })
+app.use('/home', (req, res, next) => {
+    next()
+}, (req, res) => {
+    res.render('index')
 })
+
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/error', (req, res) => {
     jhdkafhd
