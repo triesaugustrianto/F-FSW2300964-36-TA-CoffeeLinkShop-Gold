@@ -1,0 +1,23 @@
+[
+    {
+        "id"        : 1,
+        "name"      : "Gayo",
+        "price"     : "50000",
+        "category"  : "Arabika",
+        "quantity"  : 5
+    },
+    {
+        "id"        : 2,
+        "name"      : "Temanggung",
+        "price"     : "45000",
+        "category"  : "Arabika",
+        "quantity"  : 3
+    },
+    {
+        "id"        : 3,
+        "name"      : "Bali Kintamani",
+        "price"     : "55000",
+        "category"  : "Robusta",
+        "quantity"  : 4
+    }
+]
