@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path')
 const port = 3000;
+app.use(express.json())
 app.set('view engine', 'ejs')
 
 const logger = (req, res, next) => {
@@ -11,7 +12,7 @@ const logger = (req, res, next) => {
 app.use(logger)
 
 const router = require('./routers/routerProducts')
-app.use('/products', router)
+app.use('/api/products', router)
 
 app.use('/home', (req, res, next) => {
     next()
