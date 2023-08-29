@@ -11,7 +11,7 @@ const logger = (req, res, next) => {
     next()
 }
 app.use(logger)
-
+ 
 const router = require('./routers/routerProducts')
 app.use('/api/products', router)
 

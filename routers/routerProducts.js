@@ -71,4 +71,68 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.put('/:id', async (req, res) => {
+    try{
+        const {
+            name,
+            price,
+            stock,
+            description
+        } = req.body
+
+        const data = await db.select('*').from('products')
+        .where('id', req.params.id).first()
+           
+            if(!data){
+                res.status(404).json({
+                    status  : 404,
+                    message : "product not found"
+                 })
+            } else {
+                await db('products').where('id', req.params.id).update({
+                    name        : name,
+                    price       : price,
+                    stock       : stock,
+                    description : description
+                })
+                
+                res.status(201).json({
+                    status      : 201,
+                    message     : 'product update is success'
+                })
+            }
+    }catch (error){
+        res.json({
+            status      : 500,
+            message     : error.message
+        })
+    }
+})
+
+router.delete('/:id', async (req, res) => {
+    try{
+        const data = await db.select('*').from('products')
+        .where('id', req.params.id).first()
+        if(!data){
+            res.status(404).json({
+                status  : 404,
+                message : "product not found"
+            })
+        } else {
+            await db('products')
+            .where('id', req.params.id).delete()
+
+            res.status(201).json({
+                status      : 201,
+                message     : "deleted product successfull"
+            })
+        }
+    }catch (error){
+        res.status(500).json({
+            status      : 500,
+            message     : error.messsage
+        })
+    }
+})
+
 module.exports = router
