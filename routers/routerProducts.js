@@ -1,45 +1,74 @@
 const express = require('express')
 const app = express()
 const router = require('express').Router()
-app.use(express.urlencoded()) // untuk post method mengambil req body
-//const {json} = require('body-parser')
+const db = require('../db/db')
 
-const products = require('../db/products.json')
+app.use(express.urlencoded()) // untuk post method mengambil req body
 
 const logger = (req, res, next) => {
     console.log(`Router level : ${req.method} ${req.url}`)
     next()
 }
-router.use(logger);
+router.use(logger); 
 
-router.get('/', (req, res) => {
-    res.json(products)
+router.get('/', async (req, res) => {
+    try{
+        const data = await db.select('*').from('products')
+        res.json({
+        status : 201,
+        data : data})
+        
+    }catch (error){ 
+        res.json({
+            status : 500,
+            message : error.message
+        })
+    } 
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
     const id = req.params.id
-    res.json(products.find((product) => {
-        return product.id == id
-    }))
+    try{
+        const data = await db.select('*').from('products').where('id', id).first()
+        if(!data){
+            res.json({
+                status : 404,
+                message : 'product not found'
+            })
+        } 
+        res.json ({
+            status : 201,
+            data : data
+        })        
+    }catch (error){
+        res.json({
+            status : 500,
+            message : error.message
+        })
+    }
 })
 
-router.post('/', (req, res) => {
-    const product = req.body
+router.post('/', async (req, res) => {
+    try{
+        const {name, price, stock, description} = req.body
 
-    products.push({
-        data : {
-            "id"        : products.length + 1,
-            "name"      : product.name,
-            "price"     : product.price,
-            "category"  : product.category,
-            "quantity"  : product.quantity
-        }
-    })
+        await db('products').insert({
+            name        : name,
+            price       : price,
+            stock       : stock,
+            description     : description
+        })
 
-    console.log(products)
-    res.json({
-        message : "data has ben added"
-    })
+        res.status(201).json({
+            status  : 201,
+            message     : 'product successfully added'
+        })
+    } catch(error) {
+        res.jason({
+            status      : 500,
+            message     : error.message
+        })
+    }
 })
 
 module.exports = router
