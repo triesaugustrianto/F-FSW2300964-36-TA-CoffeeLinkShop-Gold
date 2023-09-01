@@ -1,3 +1,28 @@
-body {
-    background-color: aqua;
+#h1 {
+    background-color: sandybrown;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 20px ;
+    display: block;
+}
+#body {
+    top: 100px;
+}
+
+.table {
+    width: 100%;
+    font-family: sans-serif;
+    color: #232323;
+    border-collapse: collapse;
+}
+
+.table, th, td {
+    border: 1px solid #999;
+    padding: 8px 20px;
 }

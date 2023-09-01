@@ -10,3 +10,4 @@ theres are any :
 4. update selected product row on table with method PUT, endpoint : /api/products/(insert id product) and there is any condition if id not found
 5. delete selected product row on table with method DELETE, endpoint : /api/products/(insert id product) and there is any condition if id not found
 6. insert new row with running create.js
+7. see manula book with method GET, endpoint : /home

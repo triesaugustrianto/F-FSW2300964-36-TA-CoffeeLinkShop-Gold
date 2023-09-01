@@ -7,6 +7,87 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <h1>Ini Home</h1>
+    <div id="h1">
+        <b>Manual Book Coffe Link Shop</b>
+    </div>
+    <div style="height: 70px"></div>
+    <div id="body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Utility</th>
+                    <th>Method</th>
+                    <th>endpoint</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Insert</td>
+                    <td>POST</td>
+                    <td>/api/products</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Read</td>
+                    <td>GET</td>
+                    <td>/api/products</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Read (condition)</td>
+                    <td>GET</td>
+                    <td>/api/products/:id</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Update</td>
+                    <td>PUT</td>
+                    <td>/api/products/:id</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Delete</td>
+                    <td>DELETE</td>
+                    <td>/api/products/:id</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Manual Books</td>
+                    <td>GET</td>
+                    <td>/home</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>How to use api </h3>
+        <p>To use the API we use a postman</p>
+        <h4>1. Insert</h4>
+        <p>
+            choice POST on method, then add endpoint /api/products, and row data neede is name, price, stock, and description
+        </p>
+        <p>if the process has success to add we will get json response with status 201 and message is "data successfully added". 
+            and if fail we will get json response some error message with status 500
+        </p>
+        <h4>2. Read</h4>
+        <p>
+            choice GET on method, then add endpoint /api/products
+        </p>
+        <p>
+            if the process has success all row data will diplayed on json response
+        </p>
+        <h4>3. Read (Condition)</h4>
+        <p>
+            choice GET on method, then add endpoint /api/products/:id (fill with id product)
+        </p>
+        <h4>4. Update</h4>
+        <p>
+            choice PUT on method, then add endpoint /api/products/:id (fill with id product)
+        </p>
+        <h4>5. Delete</h4>
+        <p>
+            choice DELETE on method, then add endpoint /api/products/:id (fill with id product)
+        </p>
+    </div>
 </body>
 </html>
