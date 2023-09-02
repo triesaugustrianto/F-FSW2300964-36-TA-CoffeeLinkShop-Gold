@@ -12,9 +12,19 @@
     </div>
     <div style="height: 70px"></div>
     <div id="body">
+        <div class="body_content">
+        <div class="content">
+        <h3>How to use api </h3>
+        <p>On this time I will tell you how to use the API we use a postman</p>
+        
+        <div class="body_table">
+        
         <table class="table">
             <thead>
                 <tr>
+                    <th colspan="4" style="background-color: azure;">Utility Table</th>
+                </tr>
+                <tr style="background-color: antiquewhite;">
                     <th>No</th>
                     <th>Utility</th>
                     <th>Method</th>
@@ -60,33 +70,64 @@
                 </tr>
             </tbody>
         </table>
-        <h3>How to use api </h3>
-        <p>To use the API we use a postman</p>
+        </div>
         <h4>1. Insert</h4>
         <p>
             choice POST on method, then add endpoint /api/products, and row data neede is name, price, stock, and description
         </p>
         <p>if the process has success to add we will get json response with status 201 and message is "data successfully added". 
-            and if fail we will get json response some error message with status 500
+           <br>
+            and if fail we will get json response some error message with status 500.
         </p>
         <h4>2. Read</h4>
         <p>
             choice GET on method, then add endpoint /api/products
         </p>
         <p>
-            if the process has success all row data will diplayed on json response
+            if the process has success all row data will displayed on json response. 
+            <br>
+            and if error from server we will get json response with status 500 and error message.
         </p>
         <h4>3. Read (Condition)</h4>
         <p>
             choice GET on method, then add endpoint /api/products/:id (fill with id product)
         </p>
+        <p>
+            if the process has success selected row data will displayed on json response.
+            <br>
+            and if id is not found we will get json response with status 404 and message is "product is not found".
+            or if error from server we will get json response with status 500 and error message.
+        </p>
         <h4>4. Update</h4>
         <p>
             choice PUT on method, then add endpoint /api/products/:id (fill with id product)
+            the data you can update is : name, price, stock and description.
+            <br>
+            <p>
+            if the process is success you willl get json response with status 201 and message is "product update is success".
+            <br>
+            and if error you will get json respon error message with status 500 .
+            </p>
         </p>
         <h4>5. Delete</h4>
         <p>
             choice DELETE on method, then add endpoint /api/products/:id (fill with id product)
+        </p>
+        <p>
+            if the process is success you willl get json response with status 201 and message is "deleted product is successfull".
+            <br>
+            and if error you will get json respon error message with status 500 .
+            </p>
+        </div>
+        </div>
+    </div>
+    <div class="about">
+        <p>
+            Hallo, my name is Tries Augustrianto, I'am a student at Binar Academy with course is
+            Fullstak Web Developer. <br>
+            Follow me on : <br>
+            <a href="https://www.linkedin.com/in/triesat/" style="color: aqua;">LinkedIn<br></a>
+            <a href="https://github.com/triesaugustrianto" style="color: aqua;">GitHub</a>
         </p>
     </div>
 </body>

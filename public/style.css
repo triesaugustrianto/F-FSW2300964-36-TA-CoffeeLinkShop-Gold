@@ -13,16 +13,46 @@
 }
 #body {
     top: 100px;
+    display:grid;
+    width: 100%;
+    
+    align-content: center;
+}
+
+.body_table {
+    display: flex;
+    justify-content: center;
 }
 
 .table {
-    width: 100%;
+    flex-direction: column;
+    width: 80%;
     font-family: sans-serif;
     color: #232323;
     border-collapse: collapse;
 }
 
+.body_content {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    flex-direction:column;
+    width: 80%;
+}
+
 .table, th, td {
     border: 1px solid #999;
     padding: 8px 20px;
+}
+
+.about {
+    background-color: black;
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 100;
+    left: 0;
+    right: 0;
 }
