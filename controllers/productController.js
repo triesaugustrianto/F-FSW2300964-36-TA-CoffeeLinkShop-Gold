@@ -6,7 +6,7 @@ module.exports = {
         try{
             const data = await productModel.getAll()
     
-                res.json({
+                res.status(200).json({
                     status : 200,
                     data : data
                 })       
@@ -28,8 +28,8 @@ module.exports = {
                     message : 'product not found'
                 })
             } else {
-                res.json ({
-                    status : 201,
+                res.status(200).json ({
+                    status : 200,
                     data : data
                 }) 
             }       
@@ -77,8 +77,8 @@ module.exports = {
                 } else {
                     await productModel.update(id, name, price, stock, description)
                     
-                    res.status(201).json({
-                        status      : 201,
+                    res.status(200).json({
+                        status      : 200,
                         message     : 'product update is success'
                     })
                 }
@@ -102,8 +102,8 @@ module.exports = {
                 })
             } else {
                 await productModel.delete(id)   
-                res.status(201).json({
-                    status      : 201,
+                res.status(200).json({
+                    status      : 200,
                     message     : "deleted product successfull"
                 })
             }
