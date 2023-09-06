@@ -1,16 +1,16 @@
 const db = require('../db/db')
 
 module.exports = { 
-    getAll : async () => {
-        return await db.select('*').from('products')
+    getAll : () => {
+        return db.select('*').from('products')
     },
 
-    getById : async (id) => {
-        return await db.select('*').from('products').where('id', id).first()
+    getById : (id) => {
+        return db.select('*').from('products').where('id', id).first()
     },
 
-    insert : async (name, price, stock, description) => {
-        return await db('products').insert({
+    insert : (name, price, stock, description) => {
+        return db('products').insert({
         name        : name,
         price       : price,
         stock       : stock,
@@ -18,8 +18,8 @@ module.exports = {
         })
     },
 
-    update : async (id, name, price, stock, description) => {
-        return await db('products').where('id', id).update({
+    update : (id, name, price, stock, description) => {
+        return db('products').where('id', id).update({
             name        : name,
             price       : price,
             stock       : stock,
@@ -27,7 +27,7 @@ module.exports = {
         })
     },
 
-    delete : async (id) => {
-        return await db('products').where('id', id).delete()
+    delete : (id) => {
+        return db('products').where('id', id).delete()
     }
 }
