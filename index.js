@@ -15,7 +15,9 @@ app.use(logger)
 const router = require('./routers/routerProducts')
 app.use('/api/products', router)
 
-app.use('/home', (req, res, next) => {
+app.use(router)
+
+app.use('/home',(req, res, next) => {
     next()
 }, (req, res) => {
     res.render('index')
@@ -27,7 +29,7 @@ app.use('/error', (req, res) => {
     jhdkafhd
 })
 
-app.use((req, res, next) => {
+app.use('/', (req, res, next) => {
     res.status(404).json({
         message : 'not found'
     })
@@ -38,6 +40,7 @@ app.use((err, req, res, next) => {
         status : 'fail',
         message : err.message
     })
+    
 })
 
 app.listen(port, () => {

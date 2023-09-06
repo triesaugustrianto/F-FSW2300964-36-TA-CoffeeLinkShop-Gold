@@ -10,11 +10,13 @@
     font-size: 30px;
     padding-top: 20px ;
     display: block;
+    font-family: sans-serif;
 }
 #body {
     top: 100px;
     display:grid;
     width: 100%;
+    font-family: sans-serif;
     
     align-content: center;
 }
@@ -43,6 +45,7 @@
     width: 80%;
     background-color: white;
     padding-left: 3%;
+    padding-right: 3%;
 }
 
 .table, th, td {
@@ -58,4 +61,5 @@
     bottom: 100;
     left: 0;
     right: 0;
+    font-family: sans-serif;
 }
