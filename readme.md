@@ -1,7 +1,7 @@
-# Trying To Make Challenge Of Gold Chapter From Binar (Smple Rest API Tith Knex)
+# Trying To Make Challenge Of Gold Chapter From Binar (Simple Rest API With Knex And MCR Petern)
 
 ## About
-this code is how to make simple rest API with knex about coffeshop
+this code is how to make simple rest API with knex about Coffee Link Shop
 use url localhost:3000/home to know about manual book of this project (Coffee Link Shop)
 * products module
 theres are any :
