@@ -1,4 +1,4 @@
-# Trying To Make Challenge Of Gold Chapter From Binar (Simple Rest API With Knex And MCR Petern)
+# Coffee Link Shop, Challenge Of Gold Chapter From Binar (Simple Rest API With Knex And MCR Petern)
 
 ## About
 this code is how to make simple rest API with knex about Coffee Link Shop
